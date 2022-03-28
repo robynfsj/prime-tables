@@ -36,17 +36,17 @@ def get_num_of_primes():
 #   - return primes list
 
 def find_primes(n):
-    primes = [2]  # need to start with first prime already in list
-    potential_prime = 3
+    primes = []
+    potential_prime = 2
 
-    while len(primes) < n:
+    while n != 0:
         for divisor in range(2, potential_prime):
             if potential_prime % divisor == 0:
-                potential_prime += 1
                 break
         else:
             primes.append(potential_prime)
-            potential_prime += 1  # TODO: refactor to remove repetition
+            n -= 1
+        potential_prime += 1
 
     return primes
 
