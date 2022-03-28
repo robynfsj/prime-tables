@@ -35,6 +35,21 @@ def get_num_of_primes():
 #                 -> append to primes list and continue to next potential prime
 #   - return primes list
 
+def find_primes(n):
+    primes = [2]  # need to start with first prime already in list
+    potential_prime = 3
+
+    while len(primes) < n:
+        for divisor in range(2, potential_prime):
+            if potential_prime % divisor == 0:
+                potential_prime += 1
+                break
+        else:
+            primes.append(potential_prime)
+            potential_prime += 1  # TODO: refactor to remove repetition
+
+    return primes
+
 
 # (3) print primes table
 #   - input is a list of N primes from find primes function
@@ -46,4 +61,3 @@ def get_num_of_primes():
 #          |  5 | 10 | 15 | 25 |
 #   - for number in primes list
 #       -
-
