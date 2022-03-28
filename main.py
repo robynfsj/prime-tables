@@ -59,5 +59,34 @@ def find_primes(n):
 #          |  2 |  4 |  6 | 10 |
 #          |  3 |  6 |  9 | 15 |
 #          |  5 | 10 | 15 | 25 |
-#   - for number in primes list
-#       -
+
+
+def padding(num, primes):
+    len_num = len(str(num))
+    len_max_table_val = len(str(max(primes) ** 2))
+    len_padding = len_max_table_val - len_num
+    return " " * len_padding
+    # return " " * (len(str(max(primes_list) ** 2)) - len(str(num)))
+
+
+def print_table(primes):
+
+    # Print first value (which is empty)
+    print(f"| {padding(0, primes)}  |", end="")
+
+    # Print first row of primes
+    for num in primes:
+        print(f" {padding(num, primes)}{num} |", end="")
+
+    # Print subsequent rows (prime followed by multiples)
+    print("\n|", end="")
+    for row in primes:
+        print(f" {padding(row, primes)}{row} |", end="")
+        for col in primes:
+            print(f" {padding(row*col, primes)}{row*col} |", end="")
+        # determine when to start new row
+        if col != row or row != primes[-1]:
+            print("\n|", end="")
+
+# manual test
+print_table(find_primes(get_num_of_primes()))
