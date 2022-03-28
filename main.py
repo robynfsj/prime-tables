@@ -17,7 +17,7 @@ def get_num_of_primes():
             raise ValueError
     except ValueError:
         print("Invalid input. Please enter a positive integer.\n")
-        get_num_of_primes()
+        return get_num_of_primes()
     else:
         return n
 
