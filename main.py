@@ -10,6 +10,17 @@
 #     rows/columns is N + 1)
 #   - return positive integer of type int
 
+def get_num_of_primes():
+    try:
+        n = int(input("Number of primes to calculate: "))
+        if n < 1:
+            raise ValueError
+    except ValueError:
+        print("Invalid input. Please enter a positive integer.\n")
+        get_num_of_primes()
+    else:
+        return n
+
 
 # (2) find primes
 #   - create empty list to which primes will be appended
