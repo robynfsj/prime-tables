@@ -63,7 +63,7 @@ def find_primes(n):
 
 def padding(num, primes):
     len_num = len(str(num))
-    len_max_table_val = len(str(max(primes) ** 2))
+    len_max_table_val = len(str(primes[-1] ** 2))
     len_padding = len_max_table_val - len_num
     return " " * len_padding
     # return " " * (len(str(max(primes_list) ** 2)) - len(str(num)))
