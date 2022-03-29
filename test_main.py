@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from main import find_primes
+from main import find_primes, padding
 
 
 class TestFindPrimes(TestCase):
@@ -148,6 +148,15 @@ class TestFindPrimes(TestCase):
                              7853, 7867, 7873, 7877, 7879, 7883, 7901, 7907,
                              7919]
         self.assertEqual(find_primes(1000), first_1000_primes)
+
+
+class TestPadding(TestCase):
+
+    def test_correct_padding(self):
+        self.assertEqual(padding(1, [2, 3, 5]), " ")
+
+    def test_incorrect_padding(self):
+        self.assertNotEqual(padding(1, [2, 3, 5]), "")
 
 
 if __name__ == '__main__':
