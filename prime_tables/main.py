@@ -24,21 +24,6 @@
 #                 -> append to primes list and continue to next potential prime
 #   - return primes list
 
-def find_primes(n):
-    primes = []
-    potential_prime = 2
-
-    while n != 0:
-        for divisor in range(2, int(potential_prime ** (1/2)) + 1):
-            if potential_prime % divisor == 0:
-                break
-        else:
-            primes.append(potential_prime)
-            n -= 1
-        potential_prime += 1
-
-    return primes
-
 
 # (3) print primes table
 #   - input is a list of N primes from find primes function
