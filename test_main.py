@@ -153,7 +153,10 @@ class TestFindPrimes(TestCase):
 class TestPadding(TestCase):
 
     def test_correct_padding(self):
-        self.assertEqual(padding(1, [2, 3, 5]), " ")
+        num = 2
+        primes = [2, 3, 5]
+        # Largest value in table is 25 so expect a string of one space.
+        self.assertEqual(padding(num, primes), " ")
 
     def test_incorrect_padding(self):
         self.assertNotEqual(padding(1, [2, 3, 5]), "")
