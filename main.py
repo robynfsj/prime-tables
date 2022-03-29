@@ -71,21 +71,24 @@ def padding(num, primes):
 
 def print_table(primes):
 
-    # Print first value (which is empty)
+    # Print first value (which is empty).
     print(f"| {padding(0, primes)}  |", end="")
 
-    # Print first row of primes
+    # Print primes along first row.
     for num in primes:
         print(f" {padding(num, primes)}{num} |", end="")
 
-    # Print subsequent rows (prime followed by multiples)
+    # Print subsequent rows (prime followed by multiples).
     print("\n|", end="")
-    for row in primes:
-        print(f" {padding(row, primes)}{row} |", end="")
-        for col in primes:
-            print(f" {padding(row*col, primes)}{row*col} |", end="")
-        # determine when to start new row
-        if col != row or row != primes[-1]:
+    # Print left prime.
+    for left in primes:
+        print(f" {padding(left, primes)}{left} |", end="")
+        # Print multiples.
+        for top in primes:
+            print(f" {padding(left*top, primes)}{left*top} |", end="")
+            
+        # Ensure "|" is only printed on new line if not last row/left prime.
+        if left != primes[-1]:
             print("\n|", end="")
 
 # manual test
