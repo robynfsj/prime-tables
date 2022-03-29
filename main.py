@@ -40,7 +40,7 @@ def find_primes(n):
     potential_prime = 2
 
     while n != 0:
-        for divisor in range(2, potential_prime//2 + 1):
+        for divisor in range(2, int(potential_prime ** (1/2)) + 1):
             if potential_prime % divisor == 0:
                 break
         else:
