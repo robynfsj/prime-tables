@@ -2,13 +2,12 @@ def find_primes(n):
     primes = []
     potential_prime = 2
 
-    while n != 0:
+    while len(primes) != n:
         for divisor in range(2, int(potential_prime ** (1/2)) + 1):
             if potential_prime % divisor == 0:
                 break
         else:
             primes.append(potential_prime)
-            n -= 1
         potential_prime += 1
 
     return primes
