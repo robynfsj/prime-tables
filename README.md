@@ -27,6 +27,13 @@ Run:
 Run tests:  
 `python3 -m unittest discover tests "test_*.py`  
 
+Example run:
+
+<img src="https://user-images.githubusercontent.com/56518485/160828732-05e60221-66f5-4ce3-a1b2-f8f5b1aacb70.gif" 
+     alt="Screen recording of example run" 
+     width="600"/>
+
+
 
 ## 3. What I'm pleased with
 
