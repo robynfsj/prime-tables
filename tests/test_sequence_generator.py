@@ -1,22 +1,18 @@
-# Add parent directory to directories that the interpreter will search.
-import sys
-sys.path.append("..")
-
 from unittest import TestCase, main
 from prime_tables.helper_sequence_generator import find_primes
 
 
 class TestFindPrimes(TestCase):
 
-    def test_1_prime(self):
+    def test_returns_1_prime(self):
         first_prime = [2]
         self.assertEqual(find_primes(1), first_prime)
 
-    def test_7_primes(self):
+    def test_returns_7_primes(self):
         first_7_primes = [2, 3, 5, 7, 11, 13, 17]
         self.assertEqual(find_primes(7), first_7_primes)
 
-    def test_100_primes(self):
+    def test_returns_100_primes(self):
         first_100_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
                             47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                             103, 107, 109, 113, 127, 131, 137, 139, 149, 151,
@@ -29,7 +25,7 @@ class TestFindPrimes(TestCase):
                             509, 521, 523, 541]
         self.assertEqual(find_primes(100), first_100_primes)
 
-    def test_1000_primes(self):
+    def test_returns_1000_primes(self):
         first_1000_primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
                              47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                              103, 107, 109, 113, 127, 131, 137, 139, 149, 151,
@@ -152,6 +148,10 @@ class TestFindPrimes(TestCase):
                              7853, 7867, 7873, 7877, 7879, 7883, 7901, 7907,
                              7919]
         self.assertEqual(find_primes(1000), first_1000_primes)
+
+    def test_does_not_return_composites(self):
+        primes_and_comps = [2, 3, 5, 7, 8]
+        self.assertNotEqual(find_primes(5), primes_and_comps)
 
 
 if __name__ == '__main__':
