@@ -25,7 +25,7 @@ Run:
 `python3 prime_tables/main.py`
 
 Run tests:  
-`python3 -m unittest discover tests "test_*.py`
+`python3 -m unittest discover tests "test_*.py`  
 
 
 ## 3. What I'm pleased with
@@ -54,4 +54,4 @@ Erathosthenes.
 * Increase unit test coverage by mocking.
 * Refactor into OOP to improve extensibility.
 * Explore other output formats as it gets very difficult to view a large table in 
-the console.
+the console, and it does not display nicely with line wrapping on.
