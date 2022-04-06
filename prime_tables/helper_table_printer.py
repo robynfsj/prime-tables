@@ -1,28 +1,6 @@
 """Helper functions for printing multiplication tables."""
 
 
-def padding(num, primes):
-    """Calculates length of padding required to align value in table.
-
-    Calculates the largest value that will be printed in the table and
-    converts this to a string so that the number of digits can be
-    retrieved with len(). Does the same for the number to be printed
-    then calculates the difference in order to return a string of spaces
-    of the required length.
-
-    :param num: Value to be printed in table
-    :param primes: Prime numbers to be used as multipliers in the table.
-    :type num: int
-    :type primes: list
-    :return: A string containing the required number of spaces.
-    :rtype: str
-    """
-    len_num = len(str(num))
-    len_max_table_val = len(str(primes[-1] ** 2))
-    len_padding = len_max_table_val - len_num
-    return " " * len_padding
-
-
 def print_table(primes):
     """Prints multiplication table of primes to console.
 
