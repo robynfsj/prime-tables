@@ -1,5 +1,22 @@
 # Findmypast coding exercise—prime tables
 
+## Improvements after submitting to Findmypast
+
+### 2022-04-06 
+* Explored the math module and implemented its `isqrt()` function rather than 
+using `int(potential_prime**(1/2))`. Doesn't impact time efficiency but looks a 
+lot better and is easier to read. Also, math is a built-in module so there are 
+still no required dependencies to install.
+* Removed the padding function. This task can be accomplished by simply using 
+the `.rjust()` string method.
+* Created a separate function that generates the multiplication table. This is 
+useful as it means the generation of the multiples can be tested. It also makes
+the program more extensible as the user could be offered options as to how they 
+want their table displayed, e.g. in the console, returned as a csv. This output
+would also be easier to pass to the front end if one was to be built.
+* Simplified the `print_table()` function as it now prints from a list of lists
+generated from the `multiplication_table()` function.
+---
 
 ## 1. Task
 
