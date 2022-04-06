@@ -1,4 +1,5 @@
 """Helper functions that generate number sequences."""
+from math import isqrt
 
 
 def find_primes(n):
@@ -20,7 +21,7 @@ def find_primes(n):
     potential_prime = 2
 
     while len(primes) != n:
-        for divisor in range(2, int(potential_prime ** (1/2)) + 1):
+        for divisor in range(2, isqrt(potential_prime) + 1):
             if potential_prime % divisor == 0:
                 break
         else:
