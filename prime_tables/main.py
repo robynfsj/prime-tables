@@ -8,9 +8,7 @@ import helper_table_printer as tbl
 def main():
     n = inp.get_num_of_primes()
     sequence = seq.find_primes(n)
-
-    tbl.print_table(sequence)
-    print("\n")  # prevents end of line mark when running in terminal
+    tbl.print_table(tbl.generate_multiplication_table(sequence))
 
 
 if __name__ == "__main__":

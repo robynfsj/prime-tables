@@ -1,35 +1,33 @@
 """Helper functions for printing multiplication tables."""
 
 
-def print_table(primes):
-    """Prints multiplication table of primes to console.
+def generate_multiplication_table(sequence):
+    """Generate a multiplication table from the given sequence.
 
-    Prints empty first value then iterates over list of primes, printing
-    each one on the same line. For each subsequent row, prints prime
-    then multiples.
+    :param sequence: Integers to be used as multipliers in the table.
+    :type sequence: list
+    :return: Multiplication table of provided sequence.
+    :rtype: list of lists
+    """
+    row1 = [[""] + sequence]
+    subsequent_rows = [
+        [i] +  # first value in row (a number in the sequence)
+        [i*j for j in sequence] for i in sequence  # multiples
+    ]
+    return row1 + subsequent_rows
+
+
+def print_table(table):
+    """Prints multiplication table of a sequence to the console.
     
-    :param primes: Prime numbers to be used as multipliers in the table.
-    :type primes: list
+    :param table: Integers to be used as multipliers in the table.
+    :type table: list of lists
     :return: None (prints to console).
     ":rtype: NoneType
     """
-    # Print first value (which is empty).
-    # Setting end="" overrides default of starting a new line.
-    print(f"| {padding(0, primes)}  |", end="")
+    padding = len(str(table[0][-1] ** 2))
 
-    # Print primes along first row.
-    for num in primes:
-        print(f" {padding(num, primes)}{num} |", end="")
-
-    # Print subsequent rows (prime followed by multiples).
-    print("\n|", end="")
-    # Print left prime.
-    for left in primes:
-        print(f" {padding(left, primes)}{left} |", end="")
-        # Print multiples.
-        for top in primes:
-            print(f" {padding(left * top, primes)}{left * top} |", end="")
-
-        # Ensure "|" is only printed on new line if not last row/left prime.
-        if left != primes[-1]:
-            print("\n|", end="")
+    for row in table:
+        for val in row:
+            print(str(val).rjust(padding), end=" ")
+        print()
